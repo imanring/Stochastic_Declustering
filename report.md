@@ -18,9 +18,8 @@ I proposed to solve the second problem by two different methods:
 These models operate in a similar manner. The background rate is inhomogeneous and estimated from the data, while the triggering mechanism is set to a parametric form.
 
 Several considerations were similar in both cases. First, do you treat the background time as constant? Analysis showed that the background rate was not constant with time. In fact, political changes in Nigeria and the countries surrounding it dramatically affected the rate of attack. Therefore, the time and location were both estimated non-parametrically, however they were assumed to be independent in the estimate. 
-\begin{equation}
-    \mu(s,t) = f(t)g(s)
-\end{equation}
+
+$\mu(s,t) = f(t)g(s)$
 
 Second, how do you parameterize the trigger function to get an accurate interpretable estimate. Again, time and location are assumed to be independent. We use the exponential pdf for time, the normal pdf for location, and another parameter for reproduction rate.
 
@@ -35,13 +34,11 @@ We require the trigger function to be positive, so $j$ must be a positive functi
 
 When it comes to adding covariates to the background, it is slightly more complicated. A non-parametric estimate using a high dimensional dataset can severely overfit. Therefore, it is necessary to use some parametric form.
 
-\begin{equation}
-    \mu(s,t,x) = f(t)g(s) exp(x \cdot w)
-\end{equation}
 
-\begin{equation}
-    \mu(s,t,x) = f(t)g(s,x \cdot w)
-\end{equation}
+$\mu(s,t,x) = f(t)g(s) exp(x \cdot w)$
+
+
+$\mu(s,t,x) = f(t)g(s,x \cdot w)$
 
 
 I conducted initial analysis to determine which covariates were most predictive. In this setup, I aggregated the event counts on a grid with their associated coraviate values. I then conducted Poisson regression to select the best variables.
