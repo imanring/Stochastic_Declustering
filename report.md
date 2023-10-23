@@ -26,9 +26,9 @@ Second, how do you parameterize the trigger function to get an accurate interpre
 
 Finally, and perhaps most importantly, how can we incorporate covariates in the estimation of background and trigger intensities? In the model with no covariates, there were areas of high intensity that were underestimated in part because of the estimate was a kernel method. This could be remedied by adding covariates. Covariates for the trigger function are usually associated with the event rather than the location of the event. They are straight forward to add to the trigger function. Multiply a regression term to the trigger function as follows (See [(Adelfio 2015)](https://link.springer.com/article/10.1007/s10260-020-00543-5) or Section 6 of [(Chaing 2022)](https://scholarworks.iupui.edu/items/24e1401b-7559-4f25-8d08-fbd7661458a1)).
 
-\begin{equation}
-    g(t-t_i,s-s_i,m_i) = r_0 j(m_i) f(t-t_i) h(s-s_i)
-\end{equation}
+
+$g(t-t_i,s-s_i,m_i) = r_0 j(m_i) f(t-t_i) h(s-s_i)$
+
 
 We require the trigger function to be positive, so $j$ must be a positive function. Often it is $j(m) = exp(m\cdot w)$ or $j(m_i)=1 + m\cdot w$ if the covariates are positive [(Li 2021)](https://onlinelibrary.wiley.com/doi/full/10.1002/env.2697). A wald test for significance can help select predictive variables. In our case, none of covariates we tried (civilian opponent in conflict, and number of deaths resulting from the conflict) were significant. 
 
